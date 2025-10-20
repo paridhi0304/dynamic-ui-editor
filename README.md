@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+Dynamic UI Editor for Customizable Components
+A fully functional React UI editor that allows live visual customization and previewing of product/component designs, built to match dynamic constraints and the provided Figma specification.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Demo on Netlify
 
-## Available Scripts
+Features
 
-In the project directory, you can run:
+Customizable UI Sidebar: Instantly edit colors, text, font, sizing, border radius, gallery image selection, and product presentation—all via controls.
 
-### `npm start`
+Live Preview: See all changes in real time as you interact with the editor interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Image Gallery: Upload images, adjust alignment, gap, and border radius as required by the assignment.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Export Settings: Download your UI configuration as a JSON file for use elsewhere.
 
-### `npm test`
+Product Controls: Includes zoom buttons, view-in-room, and add-to-cart actions with assignment-inspired layout.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Modern UI: Responsive, clean, and closely aligned with the Figma design.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Component API & Configurable Props
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Sidebar Props
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Prop	Type	Description
+palette	array	Array of color hex codes for quick selection
+bgColor, setBgColor	string, function	Background color and setter for preview
+previewText, setPreviewText	string, function	Preview area text and setter
+fontSize, setFontSize	number, function	Font size and setter
+fontFamily, setFontFamily	string, function	Font family and setter
+fontWeight, setFontWeight	string, function	Font weight and setter
+textColor, setTextColor	string, function	Text color and setter
+textAlign, setTextAlign	string, function	Text alignment and setter
+radius, setRadius	number, function	Corner radius and setter
+shadow, setShadow	string, function	Shadow style and setter
+padding, setPadding	number, function	Preview card padding and setter
+layout, setLayout	string, function	Layout orientation (horizontal/vertical)
+galleryImages, setGalleryImages	array, function	Gallery images and setter
+selectedImage, setSelectedImage	number, function	Currently previewed image and setter
+galleryAlign, setGalleryAlign	string, function	Alignment of gallery images
+gallerySpacing, setGallerySpacing	number, function	Spacing (gap) between gallery images
+galleryRadius, setGalleryRadius	number, function	Border radius for gallery images
+(See code for full list and types.)
 
-### `npm run eject`
+PreviewArea Props
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Accepts all values above (not setters) to render the live preview,
+plus internal control for icons/buttons, matching Figma.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+sage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Clone the repo:
+git clone https://github.com/paridhi0304/dynamic-ui-editor.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Install dependencies:
+npm install
 
-## Learn More
+Start the app locally:
+npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Build for production:
+npm run build
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Deploy:
 
-### Code Splitting
+Netlify: drag the build/ folder onto Netlify Drop
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Otherwise: Use Vercel, or host your build output anywhere static files are served
 
-### Analyzing the Bundle Size
+How the Editor Works
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+All customization is handled in the sidebar.
 
-### Making a Progressive Web App
+The main area shows a real-time preview of your current configuration, including background, text, images, and product controls.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Product and image gallery customization are modular and easy to extend.
 
-### Advanced Configuration
+Export your settings as JSON for use in other systems or for handoff.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Customization & UX Decisions
 
-### Deployment
+Grouped Sidebar Sections: All controls are logically grouped for clarity and quick access, inspired by design tools like Figma.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Live Visual Feedback: Every control offers immediate feedback in the preview area for a seamless experience.
 
-### `npm run build` fails to minify
+Gallery Controls: Users can adjust alignment, spacing, and border radius of images, reflecting modern product configurators.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Minimal Dependencies: The editor uses only React and built-in hooks for maximum clarity and ease of assessment.
+
+Figma-Driven Styling: Margins, paddings, button shapes, and control grouping follow the assignment reference for visual consistency.
+
+Export/Import: (Export implemented, import can be added for extensibility.)
+
+
+Author
+
+Paridhi Tayal
+
